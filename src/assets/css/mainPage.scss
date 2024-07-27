@@ -1,0 +1,143 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url(../../fonts/Vazir.woff2);
+}
+
+@mixin shadow($width, $height, $margin-left, $margin-top, $margin-right) {
+    margin-top: $margin-top;
+    margin-left: $margin-left;
+    margin-right: $margin-right;
+    width: $width;
+    height: $height;
+}
+
+body {
+    background-color: rgba(11, 5, 27, 1);
+}
+
+.shadow {
+    opacity: 0px;
+    background: rgba(99, 45, 255, 0.63);
+    position: absolute;
+    
+
+    &-one {
+        @include shadow(50vw,100vh,-100px,-100px,0);
+        filter: blur(200px);
+    }
+    &-tow {
+        @include shadow(30vw,100vh, 0px,220px,0px);
+        filter: blur(170px);
+        &--img{
+            margin-top: 800px
+        }
+    }
+    &-three {
+        @include shadow(30vw,100vh, 0px,0px,0px);
+        filter: blur(170px);
+        &--img{
+            margin-top: 300px
+        }
+    }
+    &-four {
+        @include shadow(40vw,100vh,-100px,160px,0);
+        filter: blur(200px);
+    }
+    &-five {
+        @include shadow(40vw,100vh,-100px,160px,0);
+        filter: blur(220px);
+    }
+}
+
+.accordion :has(.show) {
+    border: 1px solid #865BFF;
+    background: rgba(115, 99, 158, 0.1);
+    border-radius: 1.5rem;
+    color: #fff;
+}
+
+.accordion {
+    &-btn {
+        background: rgba(115, 99, 158, 0.1);
+        color: #fff;
+
+        &--img {
+            width: 30px;
+        }
+    }
+}
+
+.dropdown-profile {
+    &:has(.show) {
+        border-radius: 30px 30px 0px 0px;
+
+        .dropdown-profile-btn {
+            border-radius: 20px 20px 0px 0px !important;
+        }
+    }
+
+    .show {
+        border-radius: 0px 0px 30px 30px;
+        background: rgba(166, 150, 209, 0.1) !important;
+        backdrop-filter: blur(10px);
+    }
+
+    &-btn {
+        background: rgba(166, 150, 209, 0.1) !important;
+        backdrop-filter: blur(10px);
+        font-size: 17px;
+    }
+}
+
+.dropdown {
+    &-item {
+        color: #fff;
+
+        &:hover {
+            background: rgba(166, 150, 209, 0) !important;
+            color: #865BFF !important;
+        }
+    }
+}
+
+.header {
+    &-text {
+        &-primary {
+            background: linear-gradient(270deg, #865BFF 0%, #AA67FF 37.56%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    &-btn {
+        width: 200px;
+        height: 60px;
+
+        &-primary {
+            background: linear-gradient(270deg, #865BFF 0%, #AA67FF 100%);
+            box-shadow: 0px 4px 30px 0px rgba(255, 255, 255, 0.31);
+            border: 2px solid;
+            border-image-source: linear-gradient(270deg, #875bff00 0%, #a967ff00 100%);
+            color: #fff;
+        }
+    }
+}
+
+.table {
+    &-box {
+        background: rgba(166, 150, 209, 0.1) !important;
+        backdrop-filter: blur(10px);
+    }
+}
+
+
+.nav-bar--footer {
+    li {
+        list-style-type: none;
+        font-size: 15px;
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
